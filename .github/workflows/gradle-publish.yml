@@ -1,7 +1,8 @@
 name: Gradle Package
 
 on: 
-  workflow_dispatch:  
+  workflow_dispatch:
+  push:
 
 jobs:
   build:
@@ -40,4 +41,4 @@ jobs:
       run: ./gradlew publish
       env:
         USERNAME: ${{ github.actor }}
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TOKEN: ${{ secrets.PAT_PACKAGE }}
